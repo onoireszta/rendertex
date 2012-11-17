@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">RenderTex</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">RenderTex</string>
+    <string name="cos">NO I COŚ</string>
+
+</resources>
