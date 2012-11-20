@@ -1,23 +1,102 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:padding="@dimen/padding_medium"
-        android:text="@string/hello_world"
-        tools:context=".MainActivity" />
-    
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="false"
         android:text="@string/cos"
         />
+    <WebView  xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/webView"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+		/>
+    
+    <ImageView android:id="@+id/picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:maxWidth="35dip"
+        android:maxHeight="50dip"
+        android:contentDescription="@string/picture"
+        android:src="#555555" />
+    
+    <!-- HSV: Horizontal Scroll View -->
+    <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/integral_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/integral_button" />
+            <Button
+                android:id="@+id/fraction_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fraction_button" />
+            <Button
+                android:id="@+id/function_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/function_button" />
+            <Button
+                android:id="@+id/sum_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sum_button" />
+            <Button
+                android:id="@+id/product_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/product_button" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/none_button" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/none_button" />
+                        
+		</LinearLayout>        
 
-</RelativeLayout>
+	</HorizontalScrollView>
+	
+    <TextView
+        android:id="@+id/rendertex_text_instruction" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rendertex_text_instruction" />
+    
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal" >
+	
+	    <Button
+	        android:id="@+id/rendertex_go_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/rendertex_go_button" />
+	    
+	    <EditText
+        	android:id="@+id/rendertex_edit_text"
+	        android:layout_width="match_parent" 
+	        android:layout_height="wrap_content"	        
+	        android:hint="@string/rendertex_text_welcometext" />
+	    
+	    
+	    		
+	
+	</LinearLayout>
+
+</LinearLayout>
