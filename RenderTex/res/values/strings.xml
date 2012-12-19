@@ -19,5 +19,5 @@
     <string name="rendertex_text_instruction">Wpisz instrukcję i naciśnij \'Go\'.</string>
     <string name="rendertex_go_button">Go</string>
     <string name="rendertex_text_welcometext">Tutaj wpisz instrukcję w Latex\'u</string>
-            
+    
 </resources>
