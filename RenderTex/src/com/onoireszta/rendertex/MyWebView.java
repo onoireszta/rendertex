@@ -36,7 +36,7 @@ public class MyWebView {
 	}
 	
 	public void loadEquation( String equation ){
-		String resultantHtml = customHtmlBeforeEquation + equation + customHtmlAfterEquation;
+		String resultantHtml = customHtmlBeforeEquation + "$$" + equation + "$$" + customHtmlAfterEquation;
 		
 		webView.loadDataWithBaseURL("http://onoireszta", resultantHtml, "text/html", "UTF-8", "" );
 	}
