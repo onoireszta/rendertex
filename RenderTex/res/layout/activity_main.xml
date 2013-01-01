@@ -1,32 +1,15 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cos" />
-    
-    <WebView  xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:id="@+id/webView"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content" />
-    
-    <ImageView android:id="@+id/picture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerInside"
-        android:maxWidth="35dip"
-        android:maxHeight="50dip"
-        android:contentDescription="@string/picture"
-        android:src="#555555" />
-    
+    android:layout_height="match_parent" >      
+   
     <!-- HSV: Horizontal Scroll View -->
     <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rendertex_text_instruction">
         
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
@@ -72,30 +55,36 @@
 	
     <TextView
         android:id="@+id/rendertex_text_instruction" 
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/rendertex_go_button"
         android:text="@string/rendertex_text_instruction" />
     
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    	android:layout_width="match_parent"
-    	android:layout_height="wrap_content"
-    	android:orientation="horizontal" >
+    <EditText
+       	android:id="@+id/rendertex_edit_text"
+       	android:lines="2"
+       	android:gravity="top|left"
+       	android:inputType="textMultiLine"
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/rendertex_go_button"
+        android:layout_below="@+id/rendertex_text_instruction"
+        android:layout_alignParentBottom="true"        
+        android:hint="@string/rendertex_text_welcometext" />
+    
+	<Button
+        android:id="@+id/rendertex_go_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/rendertex_go_button"
+        android:padding="20dp" />
 	
-	    <Button
-	        android:id="@+id/rendertex_go_button"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/rendertex_go_button" />
-	    
-	    <EditText
-        	android:id="@+id/rendertex_edit_text"
-	        android:layout_width="match_parent" 
-	        android:layout_height="wrap_content"	        
-	        android:hint="@string/rendertex_text_welcometext" />
-	    
-	    
-	    		
-	
-	</LinearLayout>
-
-</LinearLayout>
+ 	<com.onoireszta.rendertex.MyWebView  
+	    android:id="@+id/webView"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_above="@+id/horizontalScrollView" />
+    
+</RelativeLayout>

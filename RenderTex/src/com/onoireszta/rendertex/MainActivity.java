@@ -2,6 +2,8 @@ package com.onoireszta.rendertex;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,13 +30,15 @@ public class MainActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        myWebView = new MyWebView( (WebView) findViewById( R.id.webView ) );
+        //myWebView  = new MyWebView( (WebView) findViewById( R.id.webView ) );
+        myWebView  = (MyWebView) findViewById( R.id.webView );
         myEditText = new MyEditText( (EditText) findViewById( R.id.rendertex_edit_text ) );
-        
+                
         createAndAddGoButton();
         createUsefulButton();        
                     
-        //myWebView.loadEquation( "$$"+ "{-b"+ "\\pm" + "\\sqrt{b^2-4ac}" + "\\over" + "2a}." + "$$" );
+        myEditText.getEditText().addTextChangedListener( createEditTextTextWatcher() ); 
+        
     }
     
     @Override
@@ -48,7 +52,7 @@ public class MainActivity extends Activity implements OnClickListener {
     	goButton.setOnClickListener( new OnClickListener(){
     		@Override
 			public void onClick( View v ) {
-    			myWebView.loadEquation( myEditText.getText() );	
+    			myWebView.loadEquation( myEditText.getTextWithoutTag() );	
     		}
     	});
     }
@@ -65,14 +69,7 @@ public class MainActivity extends Activity implements OnClickListener {
         fractionButton.setOnClickListener( 	this );
         functionButton.setOnClickListener( 	this );
         sumButton.setOnClickListener(		this );
-        productButton.setOnClickListener(	this );
-        /*productButton.setOnClickListener( new OnClickListener() {
-        	@Override
-			public void onClick(View arg0) {
-        		EditText et = (EditText) findViewById( R.id.rendertex_edit_text );
-        		et.setText( "\\prod_{n=1}^n" );				
-			}
-		});*/
+        productButton.setOnClickListener(	this );        
     }
     
 	@Override
@@ -95,8 +92,30 @@ public class MainActivity extends Activity implements OnClickListener {
 			myEditText.addText( "\\prod_{n=1}^n" );
 			break;		
 		default:
-			myEditText.addText( "default" );
+			myEditText.addText( "" );
 			break;
 		}
 	}
+	
+	private TextWatcher createEditTextTextWatcher(){
+		TextWatcher editTextTextWatcher = new TextWatcher(){
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+    			myWebView.loadEquation( myEditText.getTextWithoutTag() );	
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				// TODO Auto-generated method stub
+			}
+			
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub
+			}			
+		};
+		return editTextTextWatcher;		
+	}
+	
 }

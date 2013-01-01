@@ -14,11 +14,12 @@ public class MyEditText {
 	}
 	
 	public void setText( String text ){
-		editText.setText( text );
+		editText.setText( text );	
 	}
 	
-	public String getText(){
+	public String getTextWithoutTag(){
 		return editText.getText().toString();
+		//return editText.getText().toString().replaceAll( "<", " " );
 	}
 	
 	public void addText( String text ){
@@ -32,5 +33,9 @@ public class MyEditText {
 		
 		editText.setText( result );
 		editText.setSelection( result.length() ); //set cursor position at the end 
+	}
+	
+	public EditText getEditText(){
+		return editText;
 	}
 }

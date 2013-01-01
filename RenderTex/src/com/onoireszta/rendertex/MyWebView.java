@@ -1,17 +1,32 @@
 package com.onoireszta.rendertex;
 
+import android.content.Context;
+import android.util.AttributeSet;
 import android.webkit.WebView;
 
-public class MyWebView {
-
-	private WebView webView;
+public class MyWebView extends WebView {
+	
 	private String customHtmlBeforeEquation;
 	private String customHtmlAfterEquation;
-			
-	public MyWebView( WebView myWebView ) {
-		webView = myWebView;
-		webView.getSettings().setJavaScriptEnabled(true);
-		//webView.setWebChromeClient( new WebChromeClient() ); // show alert() from js
+	
+	public MyWebView(Context context) {
+		super(context);
+		init();
+	}
+	
+	public MyWebView(Context context, AttributeSet attrs) {
+			super(context, attrs);
+			init();
+	}
+
+	public MyWebView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+		init();
+	}
+
+	private void init(){		
+		getSettings().setJavaScriptEnabled(true);
+		//setWebChromeClient( new WebChromeClient() ); // show alert() from js
  	   			
 		String javaScriptFileURL = "file:///android_asset/MathJax/MathJax.js";
  	   	customHtmlBeforeEquation = "<html><head>"
@@ -32,13 +47,14 @@ public class MyWebView {
 	   			+"</script>"
 	   			+"</head><body>";
 	   	customHtmlAfterEquation = "</body></html>";
- 	   	webView.loadDataWithBaseURL("http://onoireszta", customHtmlBeforeEquation + customHtmlAfterEquation, "text/html", "UTF-8", "");
+ 	   	loadDataWithBaseURL("http://onoireszta", customHtmlBeforeEquation + customHtmlAfterEquation, "text/html", "UTF-8", "");
+ 	   	
 	}
 	
 	public void loadEquation( String equation ){
-		String resultantHtml = customHtmlBeforeEquation + "$$" + equation + "$$" + customHtmlAfterEquation;
+		String resultHtml = customHtmlBeforeEquation + "$$" + equation + "$$" + customHtmlAfterEquation;
 		
-		webView.loadDataWithBaseURL("http://onoireszta", resultantHtml, "text/html", "UTF-8", "" );
+		loadDataWithBaseURL("http://onoireszta", resultHtml, "text/html", "UTF-8", "" );
 	}
 
 }
