@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
@@ -19,11 +20,16 @@ public class MainActivity extends Activity implements OnClickListener {
 	private MyEditText myEditText;
 	private Button goButton;
 	//useful buttons
-	private Button integralButton;
-	private Button fractionButton;
+	private ImageButton integralButton;
+	private ImageButton fractionButton;
 	private Button functionButton;
-	private Button sumButton;
-	private Button productButton;	
+	private ImageButton sumButton;
+	private ImageButton productButton;
+	private ImageButton absoluteButton;
+	private ImageButton sqrtButton;
+	private ImageButton subscriptButton;
+	private ImageButton superscriptButton;
+	private ImageButton unionButton;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,18 +64,28 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     private void createUsefulButton(){    	
-    	integralButton = (Button) findViewById( R.id.integral_button );
-    	fractionButton = (Button) findViewById( R.id.fraction_button );
-    	functionButton = (Button) findViewById( R.id.function_button );
-    	sumButton	   = (Button) findViewById( R.id.sum_button	 	 );
-    	productButton  = (Button) findViewById( R.id.product_button	 );
-    	
+    	integralButton	  = (ImageButton) findViewById( R.id.integral_button	);
+    	fractionButton	  = (ImageButton) findViewById( R.id.fraction_button	);
+    	functionButton	  = (Button) 	  findViewById( R.id.function_button	);
+    	sumButton		  = (ImageButton) findViewById( R.id.sum_button			);
+    	productButton	  = (ImageButton) findViewById( R.id.product_button 	);
+    	absoluteButton	  = (ImageButton) findViewById( R.id.absolute_button	);
+    	sqrtButton		  = (ImageButton) findViewById( R.id.sqrt_button		); 
+    	subscriptButton   = (ImageButton) findViewById( R.id.subscript_button 	);
+    	superscriptButton = (ImageButton) findViewById( R.id.superscript_button ); 
+    	unionButton 	  = (ImageButton) findViewById( R.id.union_button 		);
+    	    	
     	// set Click Listener
-        integralButton.setOnClickListener( 	this );
-        fractionButton.setOnClickListener( 	this );
-        functionButton.setOnClickListener( 	this );
-        sumButton.setOnClickListener(		this );
-        productButton.setOnClickListener(	this );        
+        integralButton.setOnClickListener	(	this );
+        fractionButton.setOnClickListener	(	this );
+        functionButton.setOnClickListener	(	this );
+        sumButton.setOnClickListener		(	this );
+        productButton.setOnClickListener	(	this );   
+        absoluteButton.setOnClickListener	(	this );
+        sqrtButton.setOnClickListener		(	this );
+        subscriptButton.setOnClickListener	(	this );
+        superscriptButton.setOnClickListener(	this );
+        unionButton.setOnClickListener		(	this );
     }
     
 	@Override
@@ -90,7 +106,22 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case( R.id.product_button ):
 			myEditText.addText( "\\prod_{n=1}^n" );
-			break;		
+			break;
+		case( R.id.absolute_button ):
+			myEditText.addText( "\\left|a\\right|" );
+			break;
+		case( R.id.sqrt_button ):
+			myEditText.addText( "\\sqrt[n]{}");
+			break;
+		case( R.id.subscript_button ):
+			myEditText.addText( "{}_{}");
+			break;
+		case( R.id.superscript_button ):
+			myEditText.addText( "{}^{}" );
+			break;
+		case( R.id.union_button ):
+			myEditText.addText( "\\bigcup\\limits_{i=1}^n");
+			break;
 		default:
 			myEditText.addText( "" );
 			break;

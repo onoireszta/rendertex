@@ -2,6 +2,7 @@ package com.onoireszta.rendertex;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.webkit.WebView;
 
 public class MyWebView extends WebView {
@@ -27,7 +28,7 @@ public class MyWebView extends WebView {
 	private void init(){		
 		getSettings().setJavaScriptEnabled(true);
 		//setWebChromeClient( new WebChromeClient() ); // show alert() from js
- 	   			
+ 	   					
 		String javaScriptFileURL = "file:///android_asset/MathJax/MathJax.js";
  	   	customHtmlBeforeEquation = "<html><head>"
 	   			+"<script type='text/x-mathjax-config'>" // from MathJax documentation  
@@ -55,6 +56,14 @@ public class MyWebView extends WebView {
 		String resultHtml = customHtmlBeforeEquation + "$$" + equation + "$$" + customHtmlAfterEquation;
 		
 		loadDataWithBaseURL("http://onoireszta", resultHtml, "text/html", "UTF-8", "" );
+	}
+	
+	@Override
+	public boolean onTouchEvent( MotionEvent event ){
+		getSettings().setBuiltInZoomControls( true );
+		getSettings().setSupportZoom( true ); // Works?
+		
+		return super.onTouchEvent( event );		
 	}
 
 }

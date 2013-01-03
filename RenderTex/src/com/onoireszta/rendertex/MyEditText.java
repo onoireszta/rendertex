@@ -32,7 +32,7 @@ public class MyEditText {
 		editText.setSelection(0);
 		
 		editText.setText( result );
-		editText.setSelection( result.length() ); //set cursor position at the end 
+		editText.setSelection( (beforeCursor + text ).length()/*result.length()*/ ); //set cursor position at the end 
 	}
 	
 	public EditText getEditText(){

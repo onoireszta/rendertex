@@ -1,8 +1,7 @@
 <resources>
 
     <string name="app_name">RenderTex</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
+    <string name="menu_settings">Ustawienia</string>
     <string name="title_activity_main">RenderTex</string>
     
     <!-- Useful Button --> 
@@ -11,8 +10,12 @@
     <string name="function_button">f(x)</string>
     <string name="sum_button">Sum</string>
     <string name="product_button">Product</string>
-    <string name="none_button">null</string>
-    
+    <string name="absolute_button">|x|</string>
+    <string name="sqrt_button">sqrt</string>
+    <string name="subscript_button">subscript</string>
+    <string name="superscript_button">superscript</string>
+    <string name="union_button">union</string>
+   
     <string name="rendertex_text_instruction">Wpisz instrukcję i naciśnij \'Go\'.</string>
     <string name="rendertex_go_button">Go</string>
     <string name="rendertex_text_welcometext">Tutaj wpisz instrukcję w Latex\'u</string>

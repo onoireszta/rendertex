@@ -15,40 +15,66 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
-            <Button
+            <ImageButton
                 android:id="@+id/integral_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/integral_button" />
-            <Button
+                android:contentDescription="@string/integral_button"
+                android:src="@drawable/integral" />
+            <ImageButton
                 android:id="@+id/fraction_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/fraction_button" />
+                android:contentDescription="@string/fraction_button"
+                android:src="@drawable/fraction" />
             <Button
                 android:id="@+id/function_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/function_button" />
-            <Button
+            <ImageButton
                 android:id="@+id/sum_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sum_button" />
-            <Button
+                android:contentDescription="@string/sum_button"
+                android:src="@drawable/sum" />
+            <ImageButton
                 android:id="@+id/product_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/product_button" />
-            <Button
+                android:contentDescription="@string/product_button"
+                android:src="@drawable/product" />
+            <ImageButton
+                android:id="@+id/absolute_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/none_button" />
-            <Button
+                android:contentDescription="@string/absolute_button"
+                android:src="@drawable/absolute" />
+            <ImageButton
+                android:id="@+id/sqrt_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/none_button" />
-                        
+                android:contentDescription="@string/sqrt_button"
+                android:src="@drawable/sqrt" />
+            <ImageButton
+                android:id="@+id/subscript_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/subscript_button"
+                android:src="@drawable/subscript" />
+            <ImageButton
+                android:id="@+id/superscript_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/superscript_button"
+                android:src="@drawable/superscript" />
+            <ImageButton
+                android:id="@+id/union_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/union_button"
+                android:src="@drawable/union" />
+                                    
 		</LinearLayout>        
 
 	</HorizontalScrollView>
