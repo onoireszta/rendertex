@@ -102,16 +102,16 @@ public class MainActivity extends Activity implements OnClickListener {
 			myEditText.addText( "f(x)=" );
 			break;
 		case( R.id.sum_button ):
-			myEditText.addText( "\\sum\\limits_{i=1}^n" );
+			myEditText.addText( "\\sum\\limits_{}^{}" );
 			break;
 		case( R.id.product_button ):
-			myEditText.addText( "\\prod_{n=1}^n" );
+			myEditText.addText( "\\prod_{}^{}" );
 			break;
 		case( R.id.absolute_button ):
-			myEditText.addText( "\\left|a\\right|" );
+			myEditText.addText( "\\left|{}\\right|" );
 			break;
 		case( R.id.sqrt_button ):
-			myEditText.addText( "\\sqrt[n]{}");
+			myEditText.addText( "\\sqrt[]{}");
 			break;
 		case( R.id.subscript_button ):
 			myEditText.addText( "{}_{}");
@@ -120,7 +120,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			myEditText.addText( "{}^{}" );
 			break;
 		case( R.id.union_button ):
-			myEditText.addText( "\\bigcup\\limits_{i=1}^n");
+			myEditText.addText( "\\bigcup\\limits_{}^{}");
 			break;
 		default:
 			myEditText.addText( "" );
