@@ -18,7 +18,9 @@ public class MyEditText {
 	}
 	
 	public String getTextWithoutTag(){
-		return editText.getText().toString();
+		return android.text.Html.fromHtml( 
+				editText.getText().toString().replaceAll( "<", "< ") ).toString();
+		//return editText.getText().toString();
 		//return editText.getText().toString().replaceAll( "<", " " );
 	}
 	
